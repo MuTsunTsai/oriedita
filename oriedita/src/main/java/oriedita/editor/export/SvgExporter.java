@@ -5,6 +5,7 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import oriedita.editor.canvas.CreasePattern_Worker;
 import oriedita.editor.canvas.LineStyle;
+import oriedita.editor.databinding.ApplicationModel;
 import oriedita.editor.databinding.FoldedFiguresList;
 import oriedita.editor.drawing.FoldedFigure_Drawer;
 import oriedita.editor.drawing.tools.Camera;
@@ -361,7 +362,7 @@ public class SvgExporter implements FileExporter {
         //Drawing of crease pattern Polygonal lines other than auxiliary live lines
         String str_stroke;
         String str_strokewidth = Integer.toString(lineWidth);
-        for (var s : foldLineSet.getLineSegmentsIterable()) {
+        for (LineSegment s : foldLineSet.getLineSegmentsIterable()) {
             LineColor color = s.getColor();
             str_stroke = getStrokeColor(color);
             if (str_stroke == null) continue;
@@ -527,7 +528,7 @@ public class SvgExporter implements FileExporter {
 
     @Override
     public void doExport(Save save, File file) throws IOException {
-        var applicationModel = save.getApplicationModel();
+        ApplicationModel applicationModel = save.getApplicationModel();
         boolean displayCpLines = applicationModel.getDisplayCpLines();
         float lineWidth = applicationModel.determineCalculatedLineWidth();
         int intLineWidth = applicationModel.getLineWidth();

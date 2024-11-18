@@ -300,7 +300,7 @@ public class FileSaveServiceImpl implements FileSaveService {
         }
 
         try {
-            for (var exporter : exporters) {
+            for (FileExporter exporter : exporters) {
                 if (exporter.supports(exportFile)) {
                     exporter.doExport(mainCreasePatternWorker.getSave_for_export_with_applicationModel(), exportFile);
                 }
@@ -416,7 +416,7 @@ public class FileSaveServiceImpl implements FileSaveService {
         if (file == null || !file.exists()) return null;
 
         try {
-            for (var importer : this.importers) {
+            for (FileImporter importer : this.importers) {
                 if (importer.supports(file)) {
                     return importer.doImport(file);
                 }
@@ -469,7 +469,7 @@ public class FileSaveServiceImpl implements FileSaveService {
 
     public void saveAndName2File(Save save, File fname) {
         try {
-            for (var exporter : exporters) {
+            for (FileExporter exporter : exporters) {
                 if (exporter.supports(fname)) {
                     exporter.doExport(save, fname);
                     return;

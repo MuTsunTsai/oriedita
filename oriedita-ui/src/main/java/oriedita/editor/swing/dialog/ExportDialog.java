@@ -89,7 +89,7 @@ public class ExportDialog extends JDialog {
         CardLayout cardLayout = (CardLayout) optionsCard.getLayout();
 
         DefaultListModel<ExportOption> listModel = new DefaultListModel<>();
-        for (var exporter : StreamSupport.stream(exporters.spliterator(), false).sorted().collect(Collectors.toList())) {
+        for (FileExporter exporter : StreamSupport.stream(exporters.spliterator(), false).sorted().collect(Collectors.toList())) {
             listModel.addElement(new ExportOption(exporter.getExtension(), exporter.getName() + " (" + exporter.getExtension() + ")"));
         }
 

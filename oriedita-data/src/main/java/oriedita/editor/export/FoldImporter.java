@@ -77,12 +77,16 @@ public class FoldImporter implements FileImporter {
     }
 
     public static LineColor getColor(FoldEdgeAssignment edgeAssignment) {
-        return switch (edgeAssignment) {
-            case MOUNTAIN_FOLD -> LineColor.RED_1;
-            case VALLEY_FOLD -> LineColor.BLUE_2;
-            case FLAT_FOLD -> LineColor.CYAN_3;
-            default -> LineColor.BLACK_0;
-        };
+        switch (edgeAssignment) {
+            case MOUNTAIN_FOLD:
+                return LineColor.RED_1;
+            case VALLEY_FOLD:
+                return LineColor.BLUE_2;
+            case FLAT_FOLD:
+                return LineColor.CYAN_3;
+            default:
+                return LineColor.BLACK_0;
+        }
     }
 
     public Save importFile(File file) throws FileReadingException, IOException {

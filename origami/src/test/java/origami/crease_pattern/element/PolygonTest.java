@@ -17,13 +17,13 @@ class PolygonTest {
 
     @Test
     public void testGetLineSegments() {
-        var pointA = new Point(0, 1);
-        var pointB = new Point(1, 1);
-        var pointC = new Point(1, 0);
+        Point pointA = new Point(0, 1);
+        Point pointB = new Point(1, 1);
+        Point pointC = new Point(1, 0);
 
-        var polygon = new Polygon(List.of(pointA, pointB, pointC));
+        Polygon polygon = new Polygon(List.of(pointA, pointB, pointC));
 
-        var lineSegments = polygon.getLineSegments();
+        List<LineSegment> lineSegments = polygon.getLineSegments();
 
         assertEquals(List.of(new LineSegment(pointA, pointB), new LineSegment(pointB, pointC), new LineSegment(pointC, pointA)), lineSegments);
     }

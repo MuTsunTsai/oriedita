@@ -197,7 +197,7 @@ public class Canvas implements MouseListener, MouseMotionListener, MouseWheelLis
         canvasUI.addMouseMotionListener(this);
         canvasUI.addMouseWheelListener(this);
 
-        var dim = canvasUI.getSize();
+        Dimension dim = canvasUI.getSize();
 
         Logger.info(" dim 001 :" + dim.width + " , " + dim.height);//多分削除可能
 
@@ -567,7 +567,7 @@ public class Canvas implements MouseListener, MouseMotionListener, MouseWheelLis
             background_set(backgroundModel.getBackgroundPosition());
         }
 
-        var h_cam = canvasUI.getH_cam();
+        Background_camera h_cam = canvasUI.getH_cam();
 
         h_cam.setLocked(backgroundModel.isLockBackground());
 
@@ -582,7 +582,7 @@ public class Canvas implements MouseListener, MouseMotionListener, MouseWheelLis
     //----------------------------------------------------------------------
     // ------------------------------------------------------
     public void background_set(Rectangle position) {
-        var h_cam = canvasUI.getH_cam();
+        Background_camera h_cam = canvasUI.getH_cam();
 
         h_cam.set_h1(position.getP1());
         h_cam.set_h2(position.getP2());
@@ -641,7 +641,7 @@ public class Canvas implements MouseListener, MouseMotionListener, MouseWheelLis
         backgroundModel.setDisplayBackground(true);
 
         if (backgroundModel.isLockBackground()) {//20181202  このifが無いとlock on のときに背景がうまく表示できない
-            var h_cam = canvasUI.getH_cam();
+            Background_camera h_cam = canvasUI.getH_cam();
             h_cam.setLocked(true);
             h_cam.setCamera(creasePatternCamera);
             h_cam.h3_obj_and_h4_obj_calculation();

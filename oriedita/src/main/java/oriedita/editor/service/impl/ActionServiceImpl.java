@@ -36,7 +36,7 @@ public class ActionServiceImpl implements ActionService {
 
     private ActionHandler getActionHandlerQualifier(Bean<OrieditaAction> bean) {
         return bean.getQualifiers().stream().<ActionHandler>mapMulti((q, consumer) -> {
-            if (q instanceof ActionHandler ah) consumer.accept(ah);
+            if (q instanceof ActionHandler) consumer.accept((ActionHandler)q);
         }).findFirst().orElseThrow();
     }
 

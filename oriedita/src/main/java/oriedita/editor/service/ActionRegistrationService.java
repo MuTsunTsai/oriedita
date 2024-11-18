@@ -76,7 +76,7 @@ public class ActionRegistrationService {
 
     public void registerActionsInitial() {
         // setMouseMode actions
-        Map<ActionType, MouseMode> mouseModeActions = new HashMap<>() {{
+        Map<ActionType, MouseMode> mouseModeActions = new HashMap<ActionType, MouseMode>() {{
             put(ActionType.selectAction, MouseMode.CREASE_SELECT_19);
             put(ActionType.unselectAction, MouseMode.CREASE_UNSELECT_20);
             put(ActionType.moveCreasePatternAction, MouseMode.MOVE_CREASE_PATTERN_2);
@@ -133,7 +133,7 @@ public class ActionRegistrationService {
         }
 
         // setMouseModeWithAfterColorAndUnselect actions
-        Map<ActionType, MouseMode> mouseModeWithAfterColorAndUnselectActions = new HashMap<>() {{
+        Map<ActionType, MouseMode> mouseModeWithAfterColorAndUnselectActions = new HashMap<ActionType, MouseMode>() {{
             put(ActionType.lengthenCreaseAction, MouseMode.LENGTHEN_CREASE_5);
             put(ActionType.angleBisectorAction, MouseMode.SQUARE_BISECTOR_7);
             put(ActionType.rabbitEarAction, MouseMode.INWARD_8);

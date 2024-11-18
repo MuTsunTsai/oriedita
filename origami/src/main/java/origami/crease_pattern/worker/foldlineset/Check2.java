@@ -11,8 +11,8 @@ public class Check2 {
         foldLineSet.getCheck2LineSegment().clear();
 
         foldLineSet.unselect_all();
-        for (var si : foldLineSet.getLineSegmentsIterable()) {
-            for (var sj : foldLineSet.getLineSegmentsIterable()) {
+        for (LineSegment si : foldLineSet.getLineSegmentsIterable()) {
+            for (LineSegment sj : foldLineSet.getLineSegmentsIterable()) {
                 if (sj == si) break;
                 if (si.getColor() == LineColor.CYAN_3) continue;
                 if (sj.getColor() == LineColor.CYAN_3) continue;

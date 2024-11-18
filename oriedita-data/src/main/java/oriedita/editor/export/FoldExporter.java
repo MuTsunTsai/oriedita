@@ -24,6 +24,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @ApplicationScoped
 public class FoldExporter implements FileExporter {
@@ -32,13 +33,24 @@ public class FoldExporter implements FileExporter {
     }
 
     private FoldEdgeAssignment getAssignment(LineColor lineColor) {
-        return switch (lineColor) {
-            default -> FoldEdgeAssignment.UNASSIGNED;
-            case BLACK_0 -> FoldEdgeAssignment.BORDER;
-            case RED_1 -> FoldEdgeAssignment.MOUNTAIN_FOLD;
-            case BLUE_2 -> FoldEdgeAssignment.VALLEY_FOLD;
-            case CYAN_3, ORANGE_4, MAGENTA_5, GREEN_6, YELLOW_7, PURPLE_8, OTHER_9 -> FoldEdgeAssignment.FLAT_FOLD;
-        };
+        switch (lineColor) {
+            case BLACK_0:
+                return FoldEdgeAssignment.BORDER;
+            case RED_1:
+                return FoldEdgeAssignment.MOUNTAIN_FOLD;
+            case BLUE_2:
+                return FoldEdgeAssignment.VALLEY_FOLD;
+            case CYAN_3:
+            case ORANGE_4:
+            case MAGENTA_5:
+            case GREEN_6:
+            case YELLOW_7:
+            case PURPLE_8:
+            case OTHER_9:
+                return FoldEdgeAssignment.FLAT_FOLD;
+            default:
+                return FoldEdgeAssignment.UNASSIGNED;
+        }
     }
 
     private void exportFile(Save save, LineSegmentSet lineSegmentSet, File file) throws InterruptedException, IOException {
@@ -86,18 +98,18 @@ public class FoldExporter implements FileExporter {
 
         if (includeFaces) {
             for (int i = 1; i <= pointSet.getNumFaces(); i++) {
-                var pface = pointSet.getFace(i);
-                var face = new Face();
+                origami.folding.element.Face pface = pointSet.getFace(i);
+                Face face = new Face();
 
-                var faceVertices = new ArrayList<Vertex>();
-                var faceEdges = new ArrayList<Edge>();
-                var vertexFirst = rootFrame.getVertices().get(pface.getPointId(1) - 1);
-                var vertexLast = rootFrame.getVertices().get(pface.getPointId(pface.getNumPoints()) - 1);
+                ArrayList<Vertex> faceVertices = new ArrayList<Vertex>();
+                ArrayList<Edge> faceEdges = new ArrayList<Edge>();
+                Vertex vertexFirst = rootFrame.getVertices().get(pface.getPointId(1) - 1);
+                Vertex vertexLast = rootFrame.getVertices().get(pface.getPointId(pface.getNumPoints()) - 1);
                 faceVertices.add(vertexFirst);
                 faceEdges.add(findEdge(vertexFirst, vertexLast, rootFrame.getEdges()));
-                for (var j = 2; j <= pface.getNumPoints(); j++) {
-                    var currentVertex = rootFrame.getVertices().get(pface.getPointId(j) - 1);
-                    var previousVertex = rootFrame.getVertices().get(pface.getPointId(j - 1) - 1);
+                for (int j = 2; j <= pface.getNumPoints(); j++) {
+                    Vertex currentVertex = rootFrame.getVertices().get(pface.getPointId(j) - 1);
+                    Vertex previousVertex = rootFrame.getVertices().get(pface.getPointId(j - 1) - 1);
                     faceVertices.add(currentVertex);
                     faceEdges.add(findEdge(currentVertex, previousVertex, rootFrame.getEdges()));
                 }
@@ -116,7 +128,7 @@ public class FoldExporter implements FileExporter {
     }
 
     private Edge findEdge(Vertex v1, Vertex v2, List<Edge> edges) {
-        var foundEdge = edges.stream().filter(e -> (e.getStart() == v1 && e.getEnd() == v2) || e.getStart() == v2 && e.getEnd() == v1).findFirst();
+        Optional<Edge> foundEdge = edges.stream().filter(e -> (e.getStart() == v1 && e.getEnd() == v2) || e.getStart() == v2 && e.getEnd() == v1).findFirst();
 
         if (foundEdge.isPresent()) {
             return foundEdge.get();
@@ -126,11 +138,14 @@ public class FoldExporter implements FileExporter {
     }
 
     private double getFoldAngle(LineColor color) {
-        return switch (color) {
-            case BLUE_2 -> 180;
-            case RED_1 -> -180;
-            default -> 0;
-        };
+        switch (color) {
+            case BLUE_2:
+                return 180;
+            case RED_1:
+                return -180;
+            default:
+                return 0;
+        }
     }
 
     @Override

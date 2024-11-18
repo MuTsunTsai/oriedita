@@ -70,16 +70,24 @@ public class Polygon {
             LineSegment.Intersection kh = OritaCalc.determineLineSegmentIntersection(s0, s);
 
             switch (kh) {
-                case INTERSECTS_1, INTERSECTS_TSHAPE_S2_VERTICAL_BAR_27, INTERSECTS_TSHAPE_S2_VERTICAL_BAR_28:
+                case INTERSECTS_1:
+                case INTERSECTS_TSHAPE_S2_VERTICAL_BAR_27:
+                case INTERSECTS_TSHAPE_S2_VERTICAL_BAR_28:
                     intersections.add(OritaCalc.findIntersection(s0, s));
                     break;
-                case PARALLEL_START_OF_S1_CONTAINS_START_OF_S2_321, PARALLEL_END_OF_S1_CONTAINS_START_OF_S2_341, PARALLEL_S1_START_OVERLAPS_S2_END_373:
+                case PARALLEL_START_OF_S1_CONTAINS_START_OF_S2_321:
+                case PARALLEL_END_OF_S1_CONTAINS_START_OF_S2_341:
+                case PARALLEL_S1_START_OVERLAPS_S2_END_373:
                     intersections.add(new Point(s.getB()));
                     break;
-                case PARALLEL_START_OF_S1_CONTAINS_END_OF_S2_331, PARALLEL_END_OF_S1_CONTAINS_END_OF_S2_351, PARALLEL_S1_START_OVERLAPS_S2_START_374:
+                case PARALLEL_START_OF_S1_CONTAINS_END_OF_S2_331:
+                case PARALLEL_END_OF_S1_CONTAINS_END_OF_S2_351:
+                case PARALLEL_S1_START_OVERLAPS_S2_START_374:
                     intersections.add(new Point(s.getA()));
                     break;
-                case PARALLEL_S1_INCLUDES_S2_361, PARALLEL_S1_INCLUDES_S2_362, PARALLEL_S1_END_OVERLAPS_S2_START_371:
+                case PARALLEL_S1_INCLUDES_S2_361:
+                case PARALLEL_S1_INCLUDES_S2_362:
+                case PARALLEL_S1_END_OVERLAPS_S2_START_371:
                     intersections.add(new Point(s.getA()));
                     intersections.add(new Point(s.getB()));
                     break;
@@ -88,7 +96,7 @@ public class Polygon {
 
         }
 
-        for (var intersection : intersections) {
+        for (Point intersection : intersections) {
             nbox.addByWeight(intersection, intersection.distance(s0.getA()));
         }
 
@@ -107,18 +115,30 @@ public class Polygon {
 
         for (int i = 1; i <= nbox.getTotal(); i++) {
             switch (inside(nbox.getValue(i))) {
-                case OUTSIDE -> outside = true;
-                case BORDER -> border = true;
-                case INSIDE -> inside = true;
-                default -> {}
+                case OUTSIDE:
+                    outside = true;
+                    break;
+                case BORDER:
+                    border = true;
+                    break;
+                case INSIDE:
+                    inside = true;
+                    break;
+                default:
             }
 
             if (i != nbox.getTotal()) {
                 switch (inside(OritaCalc.midPoint(nbox.getValue(i), nbox.getValue(i + 1)))) {
-                    case OUTSIDE -> outside = true;
-                    case BORDER -> border = true;
-                    case INSIDE -> inside = true;
-                    default -> {}
+                    case OUTSIDE:
+                        outside = true;
+                        break;
+                    case BORDER:
+                        border = true;
+                        break;
+                    case INSIDE:
+                        inside = true;
+                        break;
+                    default:
                 }
             }
         }

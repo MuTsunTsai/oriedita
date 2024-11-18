@@ -114,8 +114,8 @@ public class ButtonServiceImpl implements ButtonService {
         setAction(button, key);
         setTooltip(key);
 
-        if (button instanceof JMenuItem menuItem) {
-            registerJMenuItem(menuItem, key, replaceUnderscoresInMenus);
+        if (button instanceof JMenuItem) {
+            registerJMenuItem((JMenuItem)button, key, replaceUnderscoresInMenus);
         } else {
             registerAbstractButton(button, key);
         }
@@ -128,8 +128,8 @@ public class ButtonServiceImpl implements ButtonService {
             String key = buttonKeys.get(button);
             explanation.setExplanation(key);
             Action action = button.getAction();
-            if (action instanceof OrieditaAction oAction) {
-                Button_shared_operation(oAction.resetLineStep());
+            if (action instanceof OrieditaAction) {
+                Button_shared_operation(((OrieditaAction)action).resetLineStep());
             } else {
                 Button_shared_operation(true);
             }
@@ -170,9 +170,10 @@ public class ButtonServiceImpl implements ButtonService {
         String icon = ResourceUtil.getBundleString("icons", key);
         KeyStroke keyStroke = KeyStroke.getKeyStroke(keyStrokeString);
 
-        if (button instanceof DropdownToolButton tb) {
-            for (Component component : tb.getDropdownMenu().getComponents()) {
-                if (component instanceof JMenuItem item) {
+        if (button instanceof DropdownToolButton) {
+            for (Component component : ((DropdownToolButton)button).getDropdownMenu().getComponents()) {
+                if (component instanceof JMenuItem) {
+                    JMenuItem item = (JMenuItem)component;
                     // Since these aren't in a proper JMenu, JMenuItem.setAccelerator is not enough
                     String itemKey = item.getActionCommand();
                     if (itemKey != null) {
@@ -294,8 +295,8 @@ public class ButtonServiceImpl implements ButtonService {
     @Override
     public void addDefaultListener(Container root, boolean replaceUnderscoresInMenus) {
         Component[] components = root.getComponents();
-        if (root instanceof DropdownToolButton tb) {
-            addDefaultListener(tb.getDropdownMenu());
+        if (root instanceof DropdownToolButton) {
+            addDefaultListener(((DropdownToolButton)root).getDropdownMenu());
         }
 
         for (Component component1 : components) {
@@ -303,7 +304,8 @@ public class ButtonServiceImpl implements ButtonService {
                 addDefaultListener((Container) component1);
             }
 
-            if (component1 instanceof AbstractButton button) {
+            if (component1 instanceof AbstractButton) {
+                AbstractButton button = (AbstractButton)component1;
                 String key = button.getActionCommand();
 
                 if (key != null && !key.isEmpty()) {
