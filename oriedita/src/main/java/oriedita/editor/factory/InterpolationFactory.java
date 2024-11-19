@@ -1,8 +1,8 @@
 package oriedita.editor.factory;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.inject.Produces;
-import jakarta.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
+import javax.inject.Named;
 import oriedita.editor.canvas.animation.EaseOutInterpolation;
 import oriedita.editor.canvas.animation.Interpolation;
 

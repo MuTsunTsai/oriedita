@@ -1,8 +1,8 @@
 package oriedita.editor.databinding;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import org.tinylog.Logger;
 import oriedita.editor.text.Text;
 

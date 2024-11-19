@@ -1,6 +1,6 @@
 package oriedita.editor;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 
 import javax.swing.JFrame;
 

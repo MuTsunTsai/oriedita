@@ -1,6 +1,6 @@
 package oriedita.editor.action;
 
-import jakarta.inject.Qualifier;
+import javax.inject.Qualifier;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

@@ -1,8 +1,8 @@
 package oriedita.editor.service.impl;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import org.tinylog.Logger;
 import oriedita.editor.Foldable;
 import oriedita.editor.FrameProvider;

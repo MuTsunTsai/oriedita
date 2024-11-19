@@ -1,7 +1,7 @@
 package oriedita.editor.canvas;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import oriedita.editor.drawing.tools.Camera;
 import oriedita.editor.save.TextSave;
 import oriedita.editor.text.Text;

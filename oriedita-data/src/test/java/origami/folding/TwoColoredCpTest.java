@@ -5,7 +5,7 @@ import au.com.origin.snapshots.junit5.SnapshotExtension;
 import fold.io.CreasePatternReader;
 import fold.model.Edge;
 import fold.model.FoldFile;
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

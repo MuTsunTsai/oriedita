@@ -2,7 +2,7 @@ package oriedita.editor.swing;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Insets;

@@ -1,8 +1,8 @@
 package oriedita.editor.action;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import oriedita.editor.service.TaskExecutorService;
 
 import java.awt.event.ActionEvent;

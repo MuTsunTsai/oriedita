@@ -1,6 +1,6 @@
 package oriedita.editor.databinding;
 
-import jakarta.annotation.Nonnull;
+// import javax.annotation.Nonnull;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -159,7 +159,7 @@ class ApplicationModelTest {
         }
     }
 
-    @Nonnull
+    // @Nonnull
     private Object[] getTestValues(PropertyDescriptor property) {
         Class<?> cls = property.getPropertyType();
         if (specialProperties.containsKey(property.getName())) {

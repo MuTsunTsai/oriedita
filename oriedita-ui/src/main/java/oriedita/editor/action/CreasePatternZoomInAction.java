@@ -1,6 +1,6 @@
 package oriedita.editor.action;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 
 import java.awt.event.ActionEvent;
 

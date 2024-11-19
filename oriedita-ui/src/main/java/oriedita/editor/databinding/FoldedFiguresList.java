@@ -1,7 +1,7 @@
 package oriedita.editor.databinding;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import oriedita.editor.drawing.FoldedFigure_Drawer;
 
 import javax.swing.DefaultComboBoxModel;

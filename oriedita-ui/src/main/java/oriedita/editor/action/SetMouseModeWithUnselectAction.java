@@ -1,6 +1,6 @@
 package oriedita.editor.action;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 import oriedita.editor.canvas.CreasePattern_Worker;
 import oriedita.editor.canvas.MouseMode;
 import oriedita.editor.databinding.CanvasModel;

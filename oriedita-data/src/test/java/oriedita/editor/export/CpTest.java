@@ -3,7 +3,7 @@ package oriedita.editor.export;
 import fold.io.CreasePatternReader;
 import fold.model.Edge;
 import fold.model.FoldFile;
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import oriedita.editor.save.Save;

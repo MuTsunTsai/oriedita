@@ -1,7 +1,7 @@
 package oriedita.editor.action;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import oriedita.editor.canvas.CreasePattern_Worker;
 import oriedita.editor.service.FoldingService;
 import origami.folding.FoldedFigure;

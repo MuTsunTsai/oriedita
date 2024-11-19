@@ -1,7 +1,7 @@
 package oriedita.editor.service.impl;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import org.tinylog.Logger;
 import oriedita.editor.canvas.MouseWheelTarget;
 import oriedita.editor.databinding.CanvasModel;

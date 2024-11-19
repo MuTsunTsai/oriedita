@@ -1,6 +1,6 @@
 package oriedita.editor.export;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import oriedita.editor.save.Save;
 import oriedita.editor.export.api.FileExporter;
 import origami.crease_pattern.element.LineColor;

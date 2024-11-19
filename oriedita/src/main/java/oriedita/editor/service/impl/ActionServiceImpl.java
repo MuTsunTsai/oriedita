@@ -1,10 +1,10 @@
 package oriedita.editor.service.impl;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.inject.Any;
-import jakarta.enterprise.inject.Instance;
-import jakarta.enterprise.inject.spi.Bean;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Any;
+import javax.enterprise.inject.Instance;
+import javax.enterprise.inject.spi.Bean;
+import javax.inject.Inject;
 import oriedita.editor.action.ActionHandler;
 import oriedita.editor.action.ActionType;
 import oriedita.editor.action.OrieditaAction;
@@ -20,7 +20,7 @@ public class ActionServiceImpl implements ActionService {
     @Inject
     public ActionServiceImpl(@Any Instance<OrieditaAction> actions) {
         registeredActions = new HashMap<>();
-        actions.handles().forEach(this::registerAction);
+        // actions.handles().forEach(this::registerAction);
     }
 
     @Override
@@ -28,11 +28,11 @@ public class ActionServiceImpl implements ActionService {
         registeredActions.put(actionType, orieditaAction);
     }
 
-    public void registerAction(Instance.Handle<OrieditaAction> handle) {
-        ActionHandler annotation = getActionHandlerQualifier(handle.getBean());
+    // public void registerAction(Instance.Handle<OrieditaAction> handle) {
+    //     ActionHandler annotation = getActionHandlerQualifier(handle.getBean());
 
-        registeredActions.put(annotation.value(), handle.get());
-    }
+    //     registeredActions.put(annotation.value(), handle.get());
+    // }
 
     private ActionHandler getActionHandlerQualifier(Bean<OrieditaAction> bean) {
         return bean.getQualifiers().stream().<ActionHandler>mapMulti((q, consumer) -> {

@@ -1,8 +1,8 @@
 package oriedita.editor.export;
 
 import fold.io.CreasePatternWriter;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import org.tinylog.Logger;
 import oriedita.editor.FrameProvider;
 import oriedita.editor.export.api.FileExporter;

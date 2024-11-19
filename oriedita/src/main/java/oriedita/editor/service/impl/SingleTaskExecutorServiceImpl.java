@@ -1,6 +1,6 @@
 package oriedita.editor.service.impl;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import oriedita.editor.service.TaskExecutorService;
 import oriedita.editor.task.OrieditaTask;
 

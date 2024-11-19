@@ -1,6 +1,6 @@
 package oriedita.editor.factory;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import oriedita.editor.Colors;
 
 import javax.swing.JTextField;

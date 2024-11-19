@@ -4,7 +4,7 @@ import fold.io.CustomFoldReader;
 import fold.model.Edge;
 import fold.model.FoldEdgeAssignment;
 import fold.model.FoldFrame;
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import oriedita.editor.exception.FileReadingException;
 import oriedita.editor.export.api.FileImporter;
 import oriedita.editor.save.OrieditaFoldFile;

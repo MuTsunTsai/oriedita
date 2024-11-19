@@ -1,7 +1,7 @@
 package oriedita.editor.databinding;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import origami.Epsilon;
 
 import java.beans.PropertyChangeListener;
@@ -232,7 +232,7 @@ public class GridModel implements Serializable {
     public void setGridAngle(final double gridAngle) {
         double oldAngle = this.gridAngle;
         double newAngle = gridAngle;
-        if (newAngle < Epsilon.GRID_ANGLE_THRESHOLD) 
+        if (newAngle < Epsilon.GRID_ANGLE_THRESHOLD)
             newAngle = Epsilon.GRID_ANGLE_THRESHOLD;
         else if(newAngle > 180.0 - Epsilon.GRID_ANGLE_THRESHOLD){
             newAngle = 180.0 - Epsilon.GRID_ANGLE_THRESHOLD;

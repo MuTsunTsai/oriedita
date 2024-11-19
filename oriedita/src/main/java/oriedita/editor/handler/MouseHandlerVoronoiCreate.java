@@ -1,7 +1,7 @@
 package oriedita.editor.handler;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import org.tinylog.Logger;
 import oriedita.editor.canvas.FoldLineAdditionalInputMode;
 import oriedita.editor.canvas.MouseMode;
@@ -356,7 +356,7 @@ public class MouseHandlerVoronoiCreate extends BaseMouseHandler {
 
 
     public void voronoi_02_01(int center_point_count, LineSegmentVoronoi add_lineSegment) {
-        //i_egaki_dankai番目のボロノイ頂点は　　line_step[i_egaki_dankai].geta()　　　
+        //i_egaki_dankai番目のボロノイ頂点は　　line_step[i_egaki_dankai].geta()
 
         //Organize the line segments to be added
         StraightLine add_straightLine = new StraightLine(add_lineSegment);

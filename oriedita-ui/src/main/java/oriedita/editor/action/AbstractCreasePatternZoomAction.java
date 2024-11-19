@@ -1,6 +1,6 @@
 package oriedita.editor.action;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 import oriedita.editor.AnimationDurations;
 import oriedita.editor.Animations;
 import oriedita.editor.databinding.ApplicationModel;

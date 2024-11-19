@@ -1,10 +1,10 @@
 package oriedita.editor;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
-import jico.Ico;
-import jico.ImageReadException;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+// import jico.Ico;
+// import jico.ImageReadException;
 import org.tinylog.Logger;
 import oriedita.common.task.MultiStagedExecutor;
 import oriedita.editor.canvas.CreasePattern_Worker;
@@ -218,11 +218,11 @@ public class App {
         canvas.getCreasePatternCamera().setDisplayPositionX(350.0);
         canvas.getCreasePatternCamera().setDisplayPositionY(350.0);
 
-        try {
-            frame.setIconImages(Ico.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("oriedita.ico"))));
-        } catch (IOException | ImageReadException | NullPointerException e) {
-            Logger.error(e);
-        }
+        // try {
+        //     frame.setIconImages(Ico.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("oriedita.ico"))));
+        // } catch (IOException | ImageReadException | NullPointerException e) {
+        //     Logger.error(e);
+        // }
         frame.setContentPane(editor.$$$getRootComponent$$$());
         frame.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_CONTROL, KeyEvent.CTRL_DOWN_MASK),
                 "CTRLPress");

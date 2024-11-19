@@ -1,7 +1,7 @@
 package oriedita.editor.save;
 
-import jakarta.enterprise.inject.Instance;
-import jakarta.enterprise.util.TypeLiteral;
+import javax.enterprise.inject.Instance;
+import javax.enterprise.util.TypeLiteral;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -83,15 +83,15 @@ public class SaveTest {
 
         }
 
-        @Override
-        public Handle<T> getHandle() {
-            return null;
-        }
+        // @Override
+        // public Handle<T> getHandle() {
+        //     return null;
+        // }
 
-        @Override
-        public Iterable<? extends Handle<T>> handles() {
-            return null;
-        }
+        // @Override
+        // public Iterable<? extends Handle<T>> handles() {
+        //     return null;
+        // }
 
         @Override
         public T get() {

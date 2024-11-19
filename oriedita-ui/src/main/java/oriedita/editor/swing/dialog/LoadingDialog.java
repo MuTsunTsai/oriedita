@@ -1,7 +1,7 @@
 package oriedita.editor.swing.dialog;
 
-import jico.Ico;
-import jico.ImageReadException;
+// import jico.Ico;
+// import jico.ImageReadException;
 import org.tinylog.Logger;
 
 import javax.swing.JDialog;
@@ -19,34 +19,34 @@ import java.util.Objects;
  */
 public class LoadingDialog extends JDialog {
     public LoadingDialog() {
-        setUndecorated(true);
-        setBackground(new Color(0,0,0,0));
-        setSize(new Dimension(300,200));
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // setUndecorated(true);
+        // setBackground(new Color(0,0,0,0));
+        // setSize(new Dimension(300,200));
+        // setLocationRelativeTo(null);
+        // setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        try {
-            BufferedImage img = Ico.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("oriedita.ico"))).get(0);
+        // try {
+        //     BufferedImage img = Ico.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("oriedita.ico"))).get(0);
 
-            JPanel panel = new JPanel() {
-                @Override
-                protected void paintComponent(Graphics g) {
-                    g.drawImage(img, 0, 0, null);
-                }
+        //     JPanel panel = new JPanel() {
+        //         @Override
+        //         protected void paintComponent(Graphics g) {
+        //             g.drawImage(img, 0, 0, null);
+        //         }
 
-                @Override
-                public Dimension getPreferredSize() {
-                    return new Dimension(img.getWidth(), img.getHeight());
-                }
-            };
+        //         @Override
+        //         public Dimension getPreferredSize() {
+        //             return new Dimension(img.getWidth(), img.getHeight());
+        //         }
+        //     };
 
-            setContentPane(panel);
+        //     setContentPane(panel);
 
-            pack();
-            setLocationRelativeTo(null);
-            setVisible(true);
-        } catch (ImageReadException | IOException e) {
-            Logger.error(e);
-        }
+        //     pack();
+        //     setLocationRelativeTo(null);
+        //     setVisible(true);
+        // } catch (ImageReadException | IOException e) {
+        //     Logger.error(e);
+        // }
     }
 }

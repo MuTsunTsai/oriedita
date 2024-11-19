@@ -1,8 +1,8 @@
 package oriedita.editor.handler;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import oriedita.editor.canvas.CreasePattern_Worker;
 import oriedita.editor.canvas.MouseMode;
 import oriedita.editor.databinding.CanvasModel;
@@ -91,8 +91,8 @@ public class MouseHandlerCreaseMove4p extends BaseMouseHandlerInputRestricted {
 //--------------------------------------------
 //32 32 32 32 32 32 32 32  mouseMode==32copy2p2p	入力 32 32 32 32 32 32 32 32
 
-//動作概要　
-//mouseMode==1と線分分割以外は同じ　
+//動作概要
+//mouseMode==1と線分分割以外は同じ
 //
 
     //マウス操作(mouseMode==31move2p2p　でボタンを離したとき)を行う関数----------------------------------------------------

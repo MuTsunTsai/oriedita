@@ -1,8 +1,8 @@
 package oriedita.editor.export;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import oriedita.editor.FrameProvider;
 import oriedita.editor.export.api.FileImporter;
 import oriedita.editor.json.DefaultObjectMapper;

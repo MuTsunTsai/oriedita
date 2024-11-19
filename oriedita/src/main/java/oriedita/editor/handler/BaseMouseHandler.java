@@ -1,8 +1,8 @@
 package oriedita.editor.handler;
 
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 import oriedita.editor.canvas.CreasePattern_Worker;
 
 import java.util.EnumSet;

@@ -1,7 +1,7 @@
 package oriedita.editor.handler;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import oriedita.editor.canvas.MouseMode;
 import origami.Epsilon;
 import origami.crease_pattern.OritaCalc;
@@ -53,8 +53,8 @@ public class MouseHandlerSymmetricDraw extends BaseMouseHandlerInputRestricted {
 
 //--------------------------------------------
 //29 29 29 29 29 29 29 29  mouseMode==29正多角形入力	入力 29 29 29 29 29 29 29 29
-    //動作概要　
-    //mouseMode==1と線分分割以外は同じ　
+    //動作概要
+    //mouseMode==1と線分分割以外は同じ
     //
 
     //マウス操作(ボタンを離したとき)を行う関数

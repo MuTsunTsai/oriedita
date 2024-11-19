@@ -1,6 +1,6 @@
 package oriedita.editor.export;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import oriedita.editor.export.api.FileExporter;
 import oriedita.editor.json.DefaultObjectMapper;
 import oriedita.editor.save.Save;

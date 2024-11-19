@@ -1,7 +1,7 @@
 package oriedita.editor.databinding;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import origami.crease_pattern.element.Rectangle;
 import origami.crease_pattern.element.Point;
 import origami.crease_pattern.element.Polygon;
